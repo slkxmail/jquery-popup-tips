@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <meta http-equiv="imagetoolbar" content="no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="Content-Language" content="ru-RU" />
+        <script src="lib/jquery-1.6.4.min.js"></script>
+        <script src="src/popupTips.js"></script>
+        <link rel="stylesheet" href="skins/black/css/style.css">
+
+        <script type="text/javascript">
+
+            $(document).ready(function(){
+                var tipList = {tips: [
+                        {
+                            showType: 'event',
+                            linked: 'window',
+                            top: 'center',
+                            left: 'center',
+                            event: 'mouseover',
+                            eventObject: '#id1',
+                            mask: {
+                                color: '#000000',
+                                opacity: 0.7
+                            },
+                            content: '<b>Подсказка по центру окна</b>'  // текст подсказки
+                        },
+                        {
+                            showType: 'event',
+                            linked: 'object',
+                            linkedObject: "#qwerty",
+                            //position: ['top', 'right'],
+                            timeDelay:1,
+                            singleton: false,
+                            eventObject:'#id2',                  //указатель на объект события
+                            event: 'mouseover',                  //событие по которому надо отображать подсказку
+                            content: '<b>Покажет подсказку по центру объекта &laquo;тут будет подсказка&raquo;</b>'//,  // текст подсказки
+                        },
+                        {
+                            showType: 'event',
+                            linked: 'window',
+                            top: 'center',
+                            left: 'center',
+                            event: 'mouseover',
+                            eventObject: '#id3',
+                            mask: {
+                                color: '#000000',
+                                opacity: 0.7
+                            },
+                            content: '<b>После этой подсказки, через 2 секунды, появится еще одна подсказка</b>',
+                            childs: [
+                                {
+                                    showType: 'time',
+                                    timeDelay: 2,
+                                    linked: 'window',
+                                    top: 'center',
+                                    left: 'center',
+                                    mask: {
+                                        color: '#000000',
+                                        opacity: 0.7
+                                    },
+                                    content: '<b>Появление этой подсказки связано с предидушей</b>'
+                                }
+                            ]
+                        },
+                        {
+                            showType: 'event',
+                            linked: 'cursor',
+                            position: ['bottom', 'right'],
+                            event: 'mouseover',
+                            eventObject: '#id4',
+                            singleton: false,
+                            mask: {
+                                color: '#000000',
+                                opacity: 0.7
+                            },
+                            content: '<b>Подсказка по центру окна</b>'  // текст подсказки
+                        }
+                    ],
+
+                    settings : {
+                        top: 'center',
+                        left: 'center'
+                    }
+                };
+
+                t = new $.popupTips(tipList);
+            });
+        </script>
+
+        <title>Pop-up tips</title>
+
+    </head>
+    <body>
+        <h1>Всплывающие подсказки</h1>
+    <ul>
+        <li>Покажет подсказку по центру окна <b id="id1" class="pseudo_link">показать</b></li>
+        <li>Покажет подсказку по центру объекта &laquo;тут будет подсказка&raquo; <b id="id2" class="pseudo_link">показать</b></li>
+        <li>Последовательность подсказов (выводит подсказки одну за другой) <b id="id3" class="pseudo_link">показать</b></li>
+        <li>Покажет подсказу под курсором <b id="id4" class="pseudo_link">показать</b></li>
+    </ul>
+    <p><a href="json.html">Пример загрузки подсказок через JSON</a></p>
+        <p><a href="doc.html">Документация</a></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p><b id="qwerty" style="margin-left: 600px; width: 600px; background-color: rgba(255,47,233,0.13);">тут будет подсказка</b></p>
+
+
+
+    </body>
+</html>

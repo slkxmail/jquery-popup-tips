@@ -1,0 +1,27 @@
+.pseudo_link {
+    border-bottom: 1px dotted #0048eb;
+    color: #0048eb;
+}
+.popup_tips_layout {
+    background-color: #FFFFFF;
+    /*
+    border: 2px solid #333333;
+    padding: 0.4em;
+    */
+    -moz-border-radius: 6px 6px 6px 6px;
+    -webkit-border-radius: 6px 6px 6px 6px;
+    border-radius: 6px 6px 6px 6px;
+    -webkit-box-shadow: 0px 0px 10px 5px #EEEEEE;
+    -moz-box-shadow: 0px 0px 10px 5px #EEEEEE;
+    box-shadow: 0px 0px 10px 5px #EEEEEE;
+}
+.popup_tips_close {
+    display: block;
+    position: absolute;
+    background: url('../img/close.png');
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    right: 0;
+    cursor: pointer;
+}

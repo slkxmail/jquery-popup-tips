@@ -1,0 +1,86 @@
+<html>
+<head>
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="ru-RU" />
+    <script src="lib/jquery-1.6.4.min.js"></script>
+    <script src="src/popupTips.js"></script>
+    <link rel="stylesheet" href="skins/black/css/style.css">
+
+    <title>Pop-up tips</title>
+
+</head>
+<body>
+<h1>Плагин всплывающих подсказок.</h1>
+<p>Плагин показывает всплывающие подсказки. Подсказки можно привязать к любому объекту на странице или окну
+    браузера и задать позиционирование относительно этого элемента или окна. Появление подсказок можно связать
+    с любым событием на странице или временем прошедшем с загрузки страницы или появления подсказки. Подсказки
+    можно выстраивать в цепочки таким образом что они будут появляться одна за другой в заданной последовательности.</p>
+<h2>Параметры всплывающей подсказки</h2>
+<ul>
+    <li><b>showType</b> - условие появления подсказки [time, event, now]:
+        <ul>
+            <li><b>time</b> - по времени. Появление происходит через время указанное в параметре timeDelay.</li>
+            <li><b>event</b> - по событию. Появление подсказки происходит по наступлению события указанному в параметре event.</li>
+            <li><b>now</b> - подсказка отобразится немедлено</li>
+        </ul>
+    </li>
+    <li><b>linked</b> - Относительно чего отображать подсказку [window, object, cursor]
+        <ul>
+            <li><b>window</b> - относительно окна</li>
+            <li><b>object</b> - относительно объекта указанного в linkedObject</li>
+            <li><b>cursor</b> - относительно курсора (при выборе этого параметра нельзя указывать координаты появления подсказки)</li>
+        </ul>
+    </li>
+    <li><b>linkedObject</b> - объект относительно которого отображается подсказка ( при условии что в поле linked указано значение object)</li>
+    <li><b>event</b> - событие произошедшее у объекта заданного в параметре eventObject  по которому появляется подсказка [blur, focus, load, resize, scroll, unload, beforeunload, click, dblclick, mousedown, mouseup, mousemove, mouseover, mouseout, mouseenter, mouseleave, change, select, submit, keydown, keypress, keyup]</li>
+    <li><b>eventObject</b> - объект у которого отслеживаются события (заданные в параметре event) по наступлению которого надо показать подсказку.</li>
+    <li><b>content</b> - содержимое окна подсказки</li>
+    <li><b>childs</b> -  дочерние подсказки</li>
+    <li><b>top</b> - если linked:
+        <ul>
+            <li><b>window</b> - отступ от верхнего края страницы</li>
+            <li><b>object</b> - отступ вверх от центра объекта linkedObject</li>
+            <li><b>cursor</b> - игнорируется</li>
+        </ul>
+    </li>
+    <li><b>bottom</b> -  (игнорируется при заданно значении параметра top). Если linked:
+        <ul>
+            <li><b>window</b> - отступ от нижнего края страницы</li>
+            <li><b>object</b> - отступ вниз от центра объекта linkedObject</li>
+            <li><b>cursor</b> - игнорируется</li>
+        </ul>
+
+    </li>
+    <li><b>left</b> - если linked:
+        <ul>
+            <li><b>window</b> - отступ от левогокрая страницы
+            <li><b>object</b> - отступ влево от центра объекта linkedObject
+            <li><b>cursor</b> - игнорируется
+        </ul>
+    </li>
+    <li><b>right</b> - (игнорируется при заданно значении параметра left). Если linked:
+        <ul>
+            <li><b>window</b> - отступ от правого края страницы
+            <li><b>objec</b> - отступ вправо от центра объекта linkedObject
+            <li><b>cursor</b> - игнорируется
+        </ul>
+    </li>
+    <li><b>width</b> - шарина окна подсказки</li>
+    <li><b>height</b> - высота окна подсказки</li>
+    <li><b>onBeforShow</b> - перед открытием подсказки</li>
+    <li><b>onAfterShow</b> - после открытия подсказки</li>
+    <li><b>onBeforClose</b> - перед закрытием подсказки</li>
+    <li><b>onAfterClose</b> - после закрытия подсказки</li>
+    <li><b>singleton</b> - подсказка выводится один раз</li>
+    <li><b>mask</b> - фон под подсказкой. Если нет задано фон не выводится
+        <ul>
+            <li><b>color</b> - цвет фона</li>
+            <li><b>opacity</b> - прозрачность</li>
+        </ul>
+    </li>
+</ul>
+
+
+</body>
+</html>
